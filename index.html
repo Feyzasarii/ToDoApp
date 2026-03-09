@@ -1,4 +1,30 @@
-<h1>başlık</h1>
-<input type="text" />
-<button>ekle</button>
-<ul></ul>
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Masterclass To-Do App</title>
+  </head>
+  <body>
+    <main id="app-container">
+      <header>
+        <h1>Günlük Planım</h1>
+      </header>
+
+      <section id="input-section">
+        <label for="todo-input">Yeni Görev Ekle:</label>
+        <input
+          type="text"
+          id="todo-input"
+          placeholder="Örn: Git dersine çalış..."
+        />
+        <button id="add-btn">Ekle</button>
+      </section>
+
+      <section id="list-section">
+        <h2>Yapılacaklar</h2>
+        <ul id="todo-list"></ul>
+      </section>
+    </main>
+  </body>
+</html>

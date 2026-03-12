@@ -1,8 +1,146 @@
+/* 1. Sayfa Temeli */
 body {
-  background-color: burlywood;
-  font-family: arial, sans-serif;
+  font-family: "Inter", "Segoe UI", Arial, sans-serif;
+  background-color: #f0f2f5; /* Gözü yormayan açık gri bir arka plan */
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Sayfayı en üstten başlat */
+  min-height: 100vh;
+  padding: 80px 20px; /* Üstten ciddi bir boşluk bırakarak sayfaya nefes aldır */
 }
+
+/* 2. Ana Kapsayıcı (Web Sayfası Formu) */
+#app-container {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 650px; /* Masaüstü için daha geniş bir alan */
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* Yumuşak bir gölge */
+}
+
+h1 {
+  color: #1a1a1b;
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  text-align: left; /* Masaüstü standartlarında genellikle sola yaslanır */
+  border-bottom: 3px solid #5c67f2;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+/* 3. Giriş Bölümü (Senin istediğin o düzen) */
+#input-section {
+  display: flex;
+  flex-direction: column; /* Yazıyı üstte, kutuyu altta tutar */
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+label {
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #4a4a4a;
+}
+
+/* Giriş kutusu ve butonu yan yana tutan satır */
+.input-row {
+  display: flex;
+  gap: 15px;
+}
+
+input {
+  flex: 4; /* Input daha geniş olsun */
+  padding: 15px;
+  border: 2px solid #e1e4e8;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  border-color: #5c67f2;
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(92, 103, 242, 0.1);
+}
+
+#add-button {
+  flex: 1; /* Buton daha dar olsun */
+  background-color: #5c67f2;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+#add-button:hover {
+  background-color: #4a54e1;
+}
+
+/* 4. Liste Bölümü */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px;
+  background: #fdfdfd;
+  border: 1px solid #edf0f2;
+  border-radius: 12px;
+  margin-bottom: 12px;
+  transition: all 0.2s;
+}
+
+li:hover {
+  border-color: #5c67f2;
+  background-color: #f9f9ff;
+}
+
+/* Yazı alanı */
+span {
+  font-size: 1.1rem;
+  color: #333;
+  flex: 1;
+}
+
 .completed {
   text-decoration: line-through;
-  color: gray;
+  color: #a0a0a0 !important;
+}
+
+/* Buton Grupları */
+.todo-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+button {
+  padding: 8px 16px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.complete-btn {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+.delete-btn {
+  background-color: #ffebee;
+  color: #c62828;
+}
+
+.complete-btn:hover {
+  background-color: #c8e6c9;
+}
+.delete-btn:hover {
+  background-color: #ffcdd2;
 }

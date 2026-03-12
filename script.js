@@ -10,11 +10,38 @@ addButton.addEventListener("click", function () {
     alert("Lütfen bir görev giriniz!");
     return;
   }
-  // 1. Yeni bir 'li' (liste elemanı) oluşturuyoruz
+  // 1. Ana liste elemanını oluştur (li)
   const yeniListe = document.createElement("li");
-  // 2. İçine kullanıcının yazdığı metni koyuyoruz
-  yeniListe.textContent = YeniGorev;
-  // 3. Bu yeni elemanı sayfadaki 'ul' içine ekliyoruz
+  // 2. Metni içine koyacağımız zarfı oluştur (span)
+  const gorevMetni = document.createElement("span");
+  gorevMetni.textContent = YeniGorev;
+  // 3. Tamamla ve Sil butonlarını oluştur
+  const tamamBtn = document.createElement("button");
+  tamamBtn.textContent = "Ok";
+
+  const silBtn = document.createElement("button");
+  silBtn.textContent = "Sil";
+
+  // --- BUTONLARIN ZEKA KISMINI EKLE ---
+
+  // Silme butonu tıklandığında ne olsun?
+  silBtn.onclick = function () {
+    yeniListe.remove(); // Tüm satırı siler
+  };
+
+  // Tamamla butonu tıklandığında ne olsun?
+  tamamBtn.onclick = function () {
+    gorevMetni.classList.toggle("completed"); // Yazının üzerini çizip/açar
+  };
+
+  // --- MONTAJ (PARÇALARI BİRLEŞTİRME) ---
+
+  // li'nin içine önce metni, sonra butonları ekle
+  yeniListe.appendChild(gorevMetni);
+  yeniListe.appendChild(tamamBtn);
+  yeniListe.appendChild(silBtn);
+
+  // En son, hazırladığımız bu dolu 'li'yi sayfadaki listeye (ul) ekle
   todoList.appendChild(yeniListe);
 
   // Kutuyu temizle

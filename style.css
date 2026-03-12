@@ -1,4 +1,8 @@
 body {
-  background-color: forestgreen;
+  background-color: burlywood;
   font-family: arial, sans-serif;
+}
+.completed {
+  text-decoration: line-through;
+  color: gray;
 }
